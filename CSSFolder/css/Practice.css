@@ -1,5 +1,5 @@
 body{
-    background-color: #111827;
+    background-color: #BF092F;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -11,7 +11,7 @@ body{
 }
 
 .card{
-    background-color: #1f2937;
+    background-color: #132440;
     border-radius: 10px;
     padding: 30px;
     width: 300px;
@@ -35,11 +35,12 @@ input{
     border: 2px solid black;
     padding: 10px;
     border-radius: 10px;
-    background-color: #ccdaf1;
+    background-color: #16476ad2;
+    color: white;
 }
 
 button{
-      background-color: #ccdaf1;
+      background-color: #16476ad2;
       color: #fff;
       padding: 10px;
       border-radius: 8px;
@@ -48,6 +49,10 @@ button{
 }
 
 button:hover{
-        background-color: #111827;
+        background-color: #BF092F;
         color:white;
+}
+
+input:hover{
+    background-color: #BF092F;
 }
