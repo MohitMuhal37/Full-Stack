@@ -35,8 +35,10 @@ h2{
 .nav1 a{
     color: #f2f2f2;
     text-decoration: none;
-    background-color: #4d6001;
+    /* background-color: #4d6001; */
     padding: 5px 15px;
+    position: relative;
+    
 }
 
 .nav1 .login-btn{
@@ -45,4 +47,20 @@ h2{
     padding: 5px 15px;
     border-radius: 5px;
     cursor: grab;
+}
+
+.nav1 a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in;
+    background-color: #014e60;
+}
+
+.nav1 a:hover::after{
+    transform: scaleX(1);
 }
