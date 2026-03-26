@@ -1,0 +1,48 @@
+/* Universal Selector */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* type selector */
+p{
+    font-size: 19px;
+    margin: 10px;
+}
+
+/* class Selector */
+.highlight{
+    background-color: #b90f3c;
+    color: #f2f2f2;
+}
+
+/* id selector */
+#header{
+    background-color: #6e0b79;
+    padding: 20px;
+    color: #f2f2f2;
+    font-size: 19px;
+}
+
+/* Aatribute */
+input[type='text']{
+    border: 5px solid rgb(4, 98, 139);
+}
+
+/* Decendent */
+article  p{
+    font-style: italic;
+    background-color: rgb(211, 193, 32);
+}
+
+/* child selector */
+div > p{
+    background-color: #333;
+    color: #fff;
+}
+
+/*general sibling of h2 */
+h2 ~ p{
+    color: #860686;
+}
