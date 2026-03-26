@@ -18,7 +18,10 @@ body{
 
 .nav ul{
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
@@ -61,11 +64,11 @@ body{
 
 .nav button{
     padding: 5px 15px;
-    color: rgba(66, 3, 97, 0.756);
+    color: rgba(245, 155, 37, 0.738);
     cursor:progress;
-    font-weight: bold;
+    font-weight:900;
     border: 2px solid rgba(245, 155, 37, 0.738);
     border-radius: 7px;
-    background-color: rgb(184, 204, 222);
+    background-color: rgba(66, 3, 97, 0.756);;
     font-size: 16px;
 }
