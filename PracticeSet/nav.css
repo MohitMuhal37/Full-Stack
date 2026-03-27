@@ -58,6 +58,7 @@ body{
 }
 
 .container h2{
+    /* display: inline; */
     text-align: center;
     color: rgba(245, 155, 37, 0.738);
 }
