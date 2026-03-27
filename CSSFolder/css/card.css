@@ -5,7 +5,6 @@ body{
     background: linear-gradient(135deg, #06c2a0, #c5ff05b1);
     height: 100vh;
     display: grid;
-    /* grid-template-columns: repeat(2,1fr); */
     justify-content: center;
     align-items: center;
 }
