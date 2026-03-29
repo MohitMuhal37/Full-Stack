@@ -85,4 +85,13 @@ for(city in worldCities){
     }
     newCities[city] = worldCities[city];
 }
-console.log(newCities);
+// console.log(newCities);
+
+
+teas.forEach((tea) => {
+    if(tea === "chai"){
+        return
+    }
+    selectorTea.push(tea)
+})
+console.log(selectorTea);
