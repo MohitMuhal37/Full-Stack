@@ -13,3 +13,12 @@ while(i >= 1){
 }
 
 console.log(countDown[2]);
+
+let pmt;
+const tea =[];
+do{
+    pmt = prompt("Enter fav tea = ");
+    if(pmt !== "stop"){
+        tea.push(pmt);
+    }
+}while(pmt !== "stop");
