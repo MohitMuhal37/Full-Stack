@@ -17,4 +17,16 @@ class Car extends Vehicle{
 
 const  c1 = new Car("toyota", "2025");
 console.log(c1.start());
-console.log(c1.drive())
+console.log(c1.drive());
+
+// Encapsulation
+class CollegeAcess {
+    #isId = true;
+
+    getAccess(){
+        return `You can enter in college because your college acces is ${true}`
+    }
+}
+
+let acess = new CollegeAcess();
+console.log(acess.getAccess());
