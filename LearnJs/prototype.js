@@ -1,9 +1,18 @@
 const computer = {
     cpu : 12,
+    greet : () => {
+        return "hey how are you";  
+    }
 }
 
-const lenovo = {screen : "hd"};
+const lenovo = {screen : "hd",
+    __proto__ : computer
+};
 
-const maxHardware = {mouse : "wireLess"};
+const maxHardware = {mouse : "wireLess"
+    
+};
 
-console.log(`Computer `, computer.__proto__);
+const a = 45;
+
+console.log(a.hasOwnProperty());
