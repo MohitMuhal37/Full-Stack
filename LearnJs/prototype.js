@@ -6,3 +6,4 @@ const lenovo = {screen : "hd"};
 
 const maxHardware = {mouse : "wireLess"};
 
+console.log(`Computer `, computer.__proto__);
