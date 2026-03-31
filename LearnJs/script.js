@@ -9,6 +9,7 @@ const spans = document.getElementById("coffeeType");
 const list  = document.querySelector(".chai");
 const ulList = document.getElementById("shoppingList");
 const ulList1 = document.getElementById("taskList");
+const frm = document.getElementById("feedbackForm");
 
 function clickMe  () {
   para.innerHTML = "<h2>What the fuck i am doing here</h2>";
@@ -37,10 +38,13 @@ function removeElement(){
       
 }
 
-
+function formEvent(event){
+  alert("submmited")
+}
 
 btn.addEventListener("click", clickMe);
 btn1.addEventListener("click", changeColor);
 btn2.addEventListener("click", orderChanged);
 btn3.addEventListener("click", addItem);
 btn4.addEventListener("click", removeElement);
+frm.addEventListener("submit", formEvent)
