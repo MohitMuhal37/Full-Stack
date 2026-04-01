@@ -39,7 +39,12 @@ function removeElement(){
 }
 
 function formEvent(event){
-  alert("submmited")
+    event.preventDefault();
+    let feedback = document.getElementById("feedbackInput").value;
+    console.log(feedback);
+    
+    const p = document.getElementById("feedbackDisplay");
+    p.textContent = `Feedback is ${feedback}`
 }
 
 btn.addEventListener("click", clickMe);
