@@ -1,4 +1,4 @@
-function fetchData(){
+export function fetchData(){
     return new Promise ((resolve, reject) => {
         setTimeout (() => {
             resolve({name : "Mohit", age : 22, email : "mohit@mail.com"})
@@ -6,7 +6,7 @@ function fetchData(){
     })
 }
 
-async function getData(){
+export async function getData(){
     try {
         console.log("Fetching the data...");
        const newData =  await fetchData();
