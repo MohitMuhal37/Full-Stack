@@ -7,5 +7,5 @@ const person = {
 
 person.greet();
 
-const greetFnx = person.greet;
+const greetFnx = person.greet.bind({name : "Max"});
 greetFnx();
