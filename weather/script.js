@@ -27,10 +27,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
         errorMsg.classList.remove("hidden");
     }
 
-    function getWeather(){
-     const  city = cityInput.value.trim();
-     if(!city)return; 
-     
+    async function getWeather(){
+    const  city = cityInput.value.trim();
+    if(!city)return; 
+     //server may throw an error
+     //server/database is always in another continent
+
+     try
+     {
+       const weatherData = await fetchweatherData(city);
+       displayWeatherData(weatherData);
+     }catch(error)
+     {
+
+     }
+
+
     } 
 
     getWeatherBtn.addEventListener("click", getWeather);
