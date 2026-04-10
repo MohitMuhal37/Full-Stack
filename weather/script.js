@@ -13,23 +13,36 @@ document.addEventListener('DOMContentLoaded', ()=> {
    async function fetchweatherData(city)
     {
         //get the data
-        const url = `https://api.openweathermap.org/data/3.0/weather?q=${city}$unit=metric&appid=${API_KEY}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
         const response = await fetch(url);
         console.log(typeof(response));
         console.log("Response",response);
         
+        if(!response.ok){
+            throw new Error("city not found");
+        }
+        const data = await response.json();
+        return data;
     }
 
 
-    function displayWeatherData(weatherData)
+    function displayWeatherData(data)
     {
+        console.log(data);
+        const {name, main, weather} = data;
+        cityName.textContent = name;
 
+        temprature.textContent = `Temperature : ${main.temp}`
+        descriptions.textContent = `Description : ${weather[0].description}`
+
+         weatherInfo.classList.remove("hidden");
+        errorMsg.classList.add("hidden");
     }
 
     function showError()
     {
-        weatherInfo.classList.add("hidden");
-        errorMsg.classList.remove("hidden");
+        weatherInfo.classList.remove("hidden");
+        errorMsg.classList.add("hidden");
     }
 
     async function getWeather(){
