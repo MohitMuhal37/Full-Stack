@@ -10,8 +10,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const API_KEY = "8853b2dc70d00dd6133941fe0d1468e7"; 
 
 
-    function fetchweatherData(city)
+   async function fetchweatherData(city)
     {
+        //get the data
+        const url = `https://api.openweathermap.org/data/3.0/weather?q=${city}$unit=metric&appid=${API_KEY}`;
+        const response = await fetch(url);
+        console.log(typeof(response));
+        console.log("Response",response);
         
     }
 
