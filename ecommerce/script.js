@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded",() => {
   const products = [
     {id: 1, name: "Product 1", price: 29.68},
     {id: 2, name: "Product 2", price: 9.23},
-    {id: 3, name: "Product 3", price: 76.9766}
+    {id: 3, name: "Product 3", price: 76.6766}
   ]
 
   const cart = [];
@@ -47,15 +47,32 @@ function addToCart(product){
 ///----------------------------------///
 function renderCart(){
   cartItems.innerHTML ="";
-  let totalPrice = 0;
+  let totalprice = 0;
 
   if(cart.length){
+    emptyCarts.classList.add("hidden");
+     cartTotal.classList.remove("hidden");
+     cart.forEach((item, index) => {
+      totalprice += item.price;
 
+      const cartItem = document.createElement("div");
+      cartItem.innerHTML = `
+      ${item.name} - ${item.price.toFixed(2)} 
+      `
+
+      cartItems.appendChild(cartItem);
+      totalPrice.textContent =`${totalprice.toFixed(2)}`
+     })
   }else{
-    
+    emptyCarts.classList.remove("hidden");
+    totalPrice.textContent =`$0.00`
   }
 }
 ///----------------------------------///
 
-
+checkOutBtn.addEventListener("click", () => {
+  cart.length = 0;
+  alert("Checkout Succesfully");
+  renderCart();
+})
 })
