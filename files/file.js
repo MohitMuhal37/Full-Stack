@@ -17,11 +17,18 @@ const SaveTasks = (task) => {
     fs.writeFileSync(filePath, jsonData);
 }
 
+const listTasks = () => {
+    const task = loadTask();
+    task.forEach((task, index) => 
+    console.log(`${index + 1} = ${task.task}`)
+    )
+}
+
 const addTasks = (task) => {
     const Tasks = loadTask();
     Tasks.push({task});
     SaveTasks(Tasks);
-    console.log(`${task}, ${Tasks}`);
+    console.log(`Task added = ${task}`);
     
 }
 
