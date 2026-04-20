@@ -1,35 +1,26 @@
-const { log } = require("console");
 const fs = require("fs");
-const filePath = "./tasks.json";
+const filepath = "./taskss.json";
 
-const loadTask = () => {
+
+const loadTask = (task) => {
     try{
-        const dataBuffer = fs.readFileSync(filePath);
-        const jsaonData = dataBuffer.toString();
-        return JSON.parse(jsaonData);
+      const dataBuffer = fs.readFileSync(filepath);
+      const dataJason = dataBuffer.toString();
+      return JSON.parse(dataJason);
     }catch(error){
         return [];
     }
 }
 
-const SaveTasks = (task) => {
-    const jsonData = JSON.stringify(task);
-    fs.writeFileSync(filePath, jsonData);
-}
-
-const listTasks = () => {
-    const task = loadTask();
-    task.forEach((task, index) => 
-    console.log(`${index + 1} = ${task.task}`)
-    )
+const saveTask = (task) => {
+    const data = JSON.stringify(task);
+    fs.writeFileSync(filepath, data);
 }
 
 const addTasks = (task) => {
     const Tasks = loadTask();
     Tasks.push({task});
-    SaveTasks(Tasks);
-    console.log(`Task added = ${task}`);
-    
+    saveTask(Tasks);
 }
 
 const command = process.argv[2];
@@ -38,9 +29,9 @@ const args = process.argv[3];
 if(command === "add"){
     addTasks(args);
 }else if(command === "list"){
-    listTasks();
+    showTasks();
 }else if(command === "remove"){
     removeTasks(parseInt(args));
 }else{
-    console.log("Command not found");
+    console.log("Connot load Structure to your file"); 
 }
