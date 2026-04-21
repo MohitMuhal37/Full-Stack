@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
             }
         }else{
             res.writeHead(200,{"content-type" : contentType});
-            res.end(context, "utf-8")
+            res.end(context, "utf-8");
         }
     })
 }); 
