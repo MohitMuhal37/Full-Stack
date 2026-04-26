@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 
+
 const app = express();
 
 app.use(express.json({limit : "16kb"}));
@@ -15,6 +16,10 @@ app.use(cors({
     ],
     allowedHeaders:["Authorization", "Content-Type"],
 }));
+
+import healthCheckRouter from "./routes/healthCheck.routes.js";
+
+app.use("/api/v1/healthCheck", healthCheckRouter);
 
 app.get("/",(req, res) => {
     res.send("Hello Backend");
