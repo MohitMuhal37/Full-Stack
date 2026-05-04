@@ -69,3 +69,5 @@ const registerUser = asyncHandler(async (req, res) => {
                 {user: createUser}, "User register successfully and verification email has been sent on your email")
         )
 })
+
+export {registerUser};
