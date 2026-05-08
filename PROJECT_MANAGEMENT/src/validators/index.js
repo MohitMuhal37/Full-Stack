@@ -29,6 +29,15 @@ const userRegistorValidator = () => {
     ]
 }
 
+
+const userLoginValidator = () => {
+    return [
+        body("email")
+        .optional()
+        .isEmail()
+        .withMessage("Email is invalid")
+    ]
+}
 export {
     userRegistorValidator
 }
