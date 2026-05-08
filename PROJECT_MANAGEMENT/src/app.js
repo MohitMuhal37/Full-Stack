@@ -22,9 +22,6 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 
-app.get("/",(req, res) => {
-    res.send("Hello Backend");
-});
 
 
 import healthCheckRouter from "./routes/healthCheck.routes.js";
@@ -34,4 +31,8 @@ import { ApiError } from "./utils/api-Errors.js";
 app.use("/api/v1/healthCheck", healthCheckRouter);
 app.use("/api/v1/auth", authRouter);
 
+
+app.get("/",(req, res) => {
+    res.send("Hello Backend");
+});
 export default app;
