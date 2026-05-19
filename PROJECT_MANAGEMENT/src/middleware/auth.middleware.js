@@ -11,7 +11,7 @@ export const verifyJwt = asynHandler(async(req, resizeBy, next) => {
 
     try{
         jwt.verify(token, process.env.Access_Token_Secret);
-    }catch(){
+    }catch(error){
 
     }
 })
