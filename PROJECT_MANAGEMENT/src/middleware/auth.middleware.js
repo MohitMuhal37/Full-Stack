@@ -15,11 +15,13 @@ export const verifyJwt = asynHandler(async(req, resizeBy, next) => {
              "-password -refreshToken -emailVerificationToken -emailVerificationExpiry",
         ))
 
-        
-         if(!token){
-        throw new ApiError(401, "unauthorized request")
-    }
-    }catch(error){
 
+         if(!user){
+        throw new ApiError(401, "invalid access token")
+    }
+    req.user = user
+    next();
+    }catch(error){
+         throw new ApiError(401, "invalid access token")
     }
 })
